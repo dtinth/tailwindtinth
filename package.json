@@ -1,0 +1,31 @@
+{
+  "scripts": {
+    "prepare": "make clean && make"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@tailwindcss/custom-forms": "^0.2.1",
+    "clean-css": "^4.2.3",
+    "clean-css-cli": "^4.3.0",
+    "tailwindcss": "^1.2.0"
+  },
+  "files": [
+    "dist",
+    "tailwind.config.js",
+    "tailwind.src.css"
+  ],
+  "name": "tailwindtinth",
+  "description": " @dtinth’s custom Tailwind build, for use in my own projects…",
+  "version": "0.0.0",
+  "main": "tailwind.config.js",
+  "author": "Thai Pangsakulyanont <org.yi.dttvb@gmail.com> (http://dt.in.th/)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dtinth/tailwindtinth.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dtinth/tailwindtinth/issues"
+  },
+  "homepage": "https://github.com/dtinth/tailwindtinth#readme"
+}
