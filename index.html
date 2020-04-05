@@ -38,12 +38,81 @@
       ><span class="text-d7fc70">dtinth</span>’s
       <span class="text-bbeeff">custom Tailwind build</span>
     </h1>
-    <p class="mt-4 max-w-xl">
+    <p class="my-4 max-w-xl">
       For use in my own projects… For more information
       <a class="text-ffffbb" href="https://github.com/dtinth/tailwindtinth"
         >see GitHub repo</a
       >. This page contains the code snippets for me to copy-and-paste into new
       projects.
     </p>
+    <div id="app"></div>
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.min.js"></script>
+    <script>
+      {
+        const html = String.raw
+        Vue.component('code-block', {
+          props: ['code'],
+          template: html`<pre
+            wrap
+            class="text-sm p-4 bg-090807 text-bbeeff rounded"
+          ><code>{{code}}</code></pre>`,
+        })
+
+        const unindent = (x) => {
+          const all = x
+            .replace(/^<head>[ ]*\n/, '')
+            .replace(/<\/head>$/, '')
+            .trimEnd()
+          const indent = Math.min(
+            ...all
+              .split('\n')
+              .filter((x) => x.trim())
+              .map((x) => ((x.match(/^[ ]+/) || {})[0] || []).length),
+          )
+          return all
+            .split('\n')
+            .map((x) => x.replace(new RegExp('^' + ' '.repeat(indent)), ''))
+            .join('\n')
+        }
+
+        new Vue({
+          el: '#app',
+          template: html`<div class="flex">
+            <code-block :code="code"></code-block>
+          </div>`,
+          data: {
+            fonts: unindent(html`<head>
+              <link
+                href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400&display=swap"
+                rel="stylesheet"
+              />
+              <link
+                rel="stylesheet"
+                href="https://unpkg.com/comic-mono@0.0.1/index.css"
+              />
+            </head>`),
+            sheet: '<!-- loading latest URL... -->',
+          },
+          computed: {
+            code() {
+              return [this.fonts, this.sheet].join('\n')
+            },
+          },
+          async mounted() {
+            const response = await fetch(
+              'https://unpkg.com/tailwindtinth/dist/tailwindtinth.min.css',
+              { method: 'HEAD' },
+            )
+            const latestTailwindtinthStylesheetUrl = response.url
+            this.sheet = unindent(html`<head>
+              <link
+                rel="stylesheet"
+                href="${latestTailwindtinthStylesheetUrl}"
+              />
+            </head>`)
+          },
+        })
+      }
+    </script>
   </body>
 </html>
