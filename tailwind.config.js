@@ -40,6 +40,7 @@ module.exports = {
         '090807': '#090807',
         bbeeff: '#bbeeff',
         d7fc70: '#d7fc70',
+        ffffbb: '#ffffbb',
       },
     },
   },
