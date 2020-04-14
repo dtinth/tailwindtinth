@@ -1,0 +1,285 @@
+/*
+Based on Primer CSS, retrieved from https://unpkg.com/browse/@primer/css@14.3.0/dist/markdown.css
+Copyright (c) 2018 GitHub Inc.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
+.markdown-body {
+  word-wrap: break-word;
+}
+.markdown-body a {
+  @apply text-#ffffbb;
+}
+.markdown-body a:hover {
+  @apply underline;
+}
+.markdown-body kbd {
+  @apply font-mono text-#d7fc70 bg-#252423 border rounded border-#454443;
+  display: inline-block;
+  padding: 3px 5px;
+  vertical-align: middle;
+  box-shadow: inset 0 -1px 0 #454443;
+  font-size: 85%;
+}
+.markdown-body::before {
+  display: table;
+  content: '';
+}
+.markdown-body::after {
+  display: table;
+  clear: both;
+  content: '';
+}
+.markdown-body > *:first-child {
+  margin-top: 0 !important;
+}
+.markdown-body > *:last-child {
+  margin-bottom: 0 !important;
+}
+.markdown-body a:not([href]) {
+  color: inherit;
+  text-decoration: none;
+}
+.markdown-body .anchor {
+  @apply -ml-5 pr-1;
+  float: left;
+  line-height: 1;
+}
+.markdown-body .anchor:focus {
+  outline: none;
+}
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre,
+.markdown-body details {
+  @apply mt-0 mb-4;
+}
+.markdown-body hr {
+  @apply h-1 p-0 my-6 mx-0 border-0 bg-#656463;
+}
+.markdown-body blockquote {
+  @apply py-0 px-4 border-l-4 border-#656463;
+}
+.markdown-body blockquote > :first-child {
+  margin-top: 0;
+}
+.markdown-body blockquote > :last-child {
+  margin-bottom: 0;
+}
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  @apply mt-6 mb-4 font-semibold leading-tight;
+}
+.markdown-body h1 .octicon-link,
+.markdown-body h2 .octicon-link,
+.markdown-body h3 .octicon-link,
+.markdown-body h4 .octicon-link,
+.markdown-body h5 .octicon-link,
+.markdown-body h6 .octicon-link {
+  @apply text-#8b8685;
+  vertical-align: middle;
+  visibility: hidden;
+}
+.markdown-body h1:hover .anchor,
+.markdown-body h2:hover .anchor,
+.markdown-body h3:hover .anchor,
+.markdown-body h4:hover .anchor,
+.markdown-body h5:hover .anchor,
+.markdown-body h6:hover .anchor {
+  text-decoration: none;
+}
+.markdown-body h1:hover .anchor .octicon-link,
+.markdown-body h2:hover .anchor .octicon-link,
+.markdown-body h3:hover .anchor .octicon-link,
+.markdown-body h4:hover .anchor .octicon-link,
+.markdown-body h5:hover .anchor .octicon-link,
+.markdown-body h6:hover .anchor .octicon-link {
+  visibility: visible;
+}
+.markdown-body h1 tt,
+.markdown-body h1 code,
+.markdown-body h2 tt,
+.markdown-body h2 code,
+.markdown-body h3 tt,
+.markdown-body h3 code,
+.markdown-body h4 tt,
+.markdown-body h4 code,
+.markdown-body h5 tt,
+.markdown-body h5 code,
+.markdown-body h6 tt,
+.markdown-body h6 code {
+  font-size: inherit;
+}
+.markdown-body h1 {
+  @apply text-4xl pb-1 text-#8b8685;
+}
+.markdown-body h2 {
+  @apply text-3xl pb-1 text-#d7fc70;
+}
+.markdown-body h3 {
+  @apply text-2xl text-#8b8685;
+}
+.markdown-body h4 {
+  @apply text-xl;
+}
+.markdown-body h5 {
+  @apply text-lg;
+}
+.markdown-body h6 {
+  @apply text-base;
+}
+.markdown-body ul {
+  @apply list-disc;
+}
+.markdown-body ol {
+  @apply list-decimal;
+}
+.markdown-body ul,
+.markdown-body ol {
+  @apply pl-8;
+}
+.markdown-body ul.no-list,
+.markdown-body ol.no-list {
+  padding: 0;
+  list-style-type: none;
+}
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.markdown-body li {
+  word-wrap: break-all;
+}
+.markdown-body li > p {
+  @apply mt-4;
+}
+.markdown-body li + li {
+  @apply mt-1;
+}
+.markdown-body dl {
+  padding: 0;
+}
+.markdown-body dl dt {
+  @apply mt-4;
+  padding: 0;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: 600;
+}
+.markdown-body dl dd {
+  @apply py-0 px-4 mb-4;
+}
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+}
+.markdown-body table th {
+  font-weight: 600;
+}
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  @apply border border-#656463;
+}
+.markdown-body table tr {
+  @apply border-t border-#656463;
+}
+.markdown-body table img {
+  background-color: transparent;
+}
+.markdown-body img {
+  max-width: 100%;
+  box-sizing: content-box;
+  background-color: #fff;
+}
+.markdown-body img[align='right'] {
+  @apply pl-4;
+}
+.markdown-body img[align='left'] {
+  @apply pr-4;
+}
+.markdown-body .emoji {
+  max-width: none;
+  vertical-align: text-top;
+  background-color: transparent;
+}
+.markdown-body code,
+.markdown-body tt {
+  padding: 0.2em 0.4em;
+  margin: 0;
+  font-size: 85%;
+  border-radius: 3px;
+}
+.markdown-body code br,
+.markdown-body tt br {
+  display: none;
+}
+.markdown-body del code {
+  text-decoration: inherit;
+}
+.markdown-body pre {
+  word-wrap: normal;
+}
+.markdown-body pre > code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+.markdown-body .highlight {
+  margin-bottom: 16px;
+}
+.markdown-body .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+.markdown-body .highlight pre,
+.markdown-body pre {
+  @apply bg-#252423 p-4;
+  font-size: 85%;
+  overflow: auto;
+  border-radius: 3px;
+}
+.markdown-body pre code,
+.markdown-body pre tt {
+  display: inline;
+  max-width: auto;
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
