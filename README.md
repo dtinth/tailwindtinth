@@ -13,3 +13,9 @@ For use in my own projects… This is Tailwind CSS plus:
 ## Versioning
 
 This project has its own versioning, and does not follow Tailwind’s versioning.
+
+## Default styling for Markdown contents
+
+Some of my projects involves rendering Markdown contents.
+However, Tailwind doesn’t come with any styling for prose.
+Therefore, I added a class `.markdown-body` with default styling for Markdown contents based on stylesheets from GitHub’s Primer CSS.
