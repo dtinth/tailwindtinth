@@ -16,7 +16,7 @@
   ],
   "name": "tailwindtinth",
   "description": " @dtinth’s custom Tailwind build, for use in my own projects…",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "main": "tailwind.config.js",
   "author": "Thai Pangsakulyanont <org.yi.dttvb@gmail.com> (http://dt.in.th/)",
   "license": "MIT",
